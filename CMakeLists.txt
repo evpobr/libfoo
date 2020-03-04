@@ -53,4 +53,7 @@ install(
 if(NOT CPACK_PACKAGE_CONTACT)
   set(CPACK_PACKAGE_CONTACT "evpobr <evpobr@gmail.com>")
 endif()
+if(NOT CPACK_DEBIAN_PACKAGE_SHLIBDEPS)
+  set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+endif()
 include(CPack)
