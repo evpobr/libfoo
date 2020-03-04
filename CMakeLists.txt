@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(foo VERSION 0.1.1 LANGUAGES C)
+project(foo VERSION 0.1.1 DESCRIPTION "Another useless C & CMake library." LANGUAGES C)
 
 include(GNUInstallDirs)
 include(GenerateExportHeader)
