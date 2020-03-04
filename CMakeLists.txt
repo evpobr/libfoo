@@ -50,4 +50,7 @@ install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/foo-config-version.cmake
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 
+if(NOT CPACK_PACKAGE_CONTACT)
+  set(CPACK_PACKAGE_CONTACT "evpobr <evpobr@gmail.com>")
+endif()
 include(CPack)
