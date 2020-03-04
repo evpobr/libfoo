@@ -17,6 +17,8 @@ FOO_EXPORT int foo_new(foo_ctx *ctx)
     }
 
     *ctx = obj;
+
+    return 0;
 }
 
 FOO_EXPORT void foo_delete(foo_ctx ctx)
