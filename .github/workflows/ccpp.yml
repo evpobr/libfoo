@@ -29,4 +29,4 @@ jobs:
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON
           cmake --build . --config Release
-          cpack -G${{matrix.cpack-generator}}
+          cpack -G ${{matrix.cpack-generator}}
