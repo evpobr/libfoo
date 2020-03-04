@@ -19,7 +19,7 @@ jobs:
             cpack-generator: ZIP
           - name: windows-latest
             os: windows-latest
-            cpack-executable: 'C:/Program Files/CMake/bin/cpack.exe'
+            cpack-executable: '"C:/Program Files/CMake/bin/cpack.exe"'
             cpack-generator: ZIP
 
 
