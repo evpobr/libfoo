@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(foo VERSION 0.1.0 LANGUAGES C)
+project(foo VERSION 0.1.1 LANGUAGES C)
 
 include(GNUInstallDirs)
 include(GenerateExportHeader)
@@ -22,7 +22,7 @@ set(foo_PUBLIC_HDRS
   ${CMAKE_CURRENT_BINARY_DIR}/include/foo/foo_export.h)
 
 set_target_properties(foo PROPERTIES
-  VERSION 0.1.0
+  VERSION 0.1.1
   SOVERSION 0
   C_VISIBILITY_PRESET hidden
   PUBLIC_HEADER "${foo_PUBLIC_HDRS}")

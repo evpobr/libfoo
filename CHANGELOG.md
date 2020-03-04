@@ -11,7 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Github Actions CI integration
+
+### Fixed
+
+- `foo_new()` return on success
+
+## [0.1.0] - 2020-02-10
+
+### Added
+
 - Functions `foo_new()` and `foo_delete()` to create\delete `foo` objects.
 
-[Unreleased]: https://github.com/evpobr/libfoo/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/evpobr/libfoo/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/evpobr/libfoo/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/evpobr/libfoo/releases/tag/v0.1.0
