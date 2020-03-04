@@ -11,12 +11,15 @@ jobs:
         include:
           - name: ubuntu-latest
             os: ubuntu-latest
+            cpack-executable: 'cpack'
             cpack-generator: DEB
           - name: macos-latest
             os: ubuntu-latest
+            cpack-executable: 'cpack'
             cpack-generator: ZIP
           - name: windows-latest
             os: windows-latest
+            cpack-executable: 'C:/Program Files/CMake/bin/cpack.exe'
             cpack-generator: ZIP
 
 
@@ -29,4 +32,4 @@ jobs:
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON
           cmake --build . --config Release
-          cpack -G ${{matrix.cpack-generator}}
+          ${{matrix.cpack-executable}} -G ${{matrix.cpack-generator}}
