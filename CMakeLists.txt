@@ -49,3 +49,5 @@ write_basic_package_version_file(foo-config-version.cmake
 install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/foo-config-version.cmake
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
+
+include(CPack)
