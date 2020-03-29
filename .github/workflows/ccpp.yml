@@ -21,4 +21,5 @@ jobs:
       - name: Pack
         if: startsWith(matrix.os,'ubuntu')
         run: |
-          cpack -G"DEB"
+          cd build
+          cpack -GDEB
