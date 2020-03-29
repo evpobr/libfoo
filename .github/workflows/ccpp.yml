@@ -30,7 +30,8 @@ jobs:
         if: startsWith(matrix.os,'windows')
         run: |
           cd build
-          ${env:ProgramFiles}/cpack.exe -G "ZIP"
+          cmake --version
+          cpack.exe -G "ZIP"
 
       - uses: actions/upload-artifact@v1
         if: startsWith(matrix.os,'ubuntu')
