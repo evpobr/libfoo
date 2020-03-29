@@ -23,3 +23,9 @@ jobs:
         run: |
           cd build
           cpack -G DEB
+
+      - uses: actions/upload-artifact@v1
+        if: startsWith(matrix.os,'ubuntu')
+        with:
+          name: foo-Linux.deb
+          path: build/*.deb
