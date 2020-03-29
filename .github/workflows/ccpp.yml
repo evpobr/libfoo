@@ -15,11 +15,11 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCPACK_PACKAGE_NAME="foo"
           cmake --build . --config Release
 
       - name: Pack
         if: startsWith(matrix.os,'ubuntu')
         run: |
           cd build
-          cpack -G DEB -DCPACK_PACKAGE_NAME="foo"
+          cpack -G DEB
