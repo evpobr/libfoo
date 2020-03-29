@@ -29,5 +29,5 @@ jobs:
       - uses: actions/upload-artifact@v1
         if: startsWith(matrix.os,'ubuntu')
         with:
-          name: foo-${{project-version}}-Linux.deb
-          path: build/foo-${{project-version}}-Linux.deb
+          name: foo-${{env.project-version}}-Linux.deb
+          path: build/foo-${{env.project-version}}-Linux.deb
