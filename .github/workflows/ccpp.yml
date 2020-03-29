@@ -17,3 +17,8 @@ jobs:
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON
           cmake --build . --config Release
+
+      - name: Pack
+        if: startsWith(matrix.os,'ubuntu')
+        run: |
+          cpack -G"DEB"
