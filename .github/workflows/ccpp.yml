@@ -3,38 +3,29 @@ name: C/C++ CI
 on: [push]
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    env:
-      project-version: "0.1.1"
+  build-ubuntu:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Build
+      - name: Configure
         run: |
           mkdir build
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCPACK_PACKAGE_CONTACT="evpobr" -DCPACK_DEBIAN_PACKAGE_SHLIBDEPS=ON
-          cmake --build . --config Release
-
-      - name: Pack (DEB)
-        if: startsWith(matrix.os,'ubuntu')
+      - name: Build
+        run: cmake --build . --config Release
+      - name: Package DEB
         run: |
-          cd build
           cpack -G DEB
 
-      - name: Pack (ZIP)
-        if: startsWith(matrix.os,'windows')
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure
         run: |
+          mkdir build
           cd build
-          cmake --version
-          cpack.exe -G "ZIP"
-
-      - uses: actions/upload-artifact@v1
-        if: startsWith(matrix.os,'ubuntu')
-        with:
-          name: foo-${{env.project-version}}-Linux.deb
-          path: build/foo-${{env.project-version}}-Linux.deb
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCPACK_PACKAGE_CONTACT="evpobr" -DCPACK_DEBIAN_PACKAGE_SHLIBDEPS=ON
+      - name: Build
+        run: cmake --build . --config Release

@@ -1,0 +1,4 @@
+BreakBeforeBraces: Linux
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
