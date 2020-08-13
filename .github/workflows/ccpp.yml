@@ -14,9 +14,11 @@ jobs:
           cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCPACK_PACKAGE_CONTACT="evpobr" -DCPACK_DEBIAN_PACKAGE_SHLIBDEPS=ON
       - name: Build
         run: cmake --build . --config Release
+        working-directory: ./build
       - name: Package DEB
         run: |
           cpack -G DEB
+        working-directory: ./build
 
   build-macos:
     runs-on: macos-latest
