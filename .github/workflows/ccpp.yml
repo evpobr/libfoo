@@ -54,23 +54,6 @@ jobs:
           cpack -G DEB
         working-directory: ./build
 
-  build-ubuntu-2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Configure
-        run: |
-          mkdir build
-          cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCPACK_PACKAGE_CONTACT="evpobr" -DCPACK_DEBIAN_PACKAGE_SHLIBDEPS=ON
-      - name: Build
-        run: cmake --build . --config Release
-        working-directory: ./build
-      - name: Package DEB
-        run: |
-          cpack -G DEB
-        working-directory: ./build
-
   build-ubuntu-3:
     runs-on: ubuntu-latest
     steps:
