@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.11..3.18)
 
 project(foo VERSION 0.1.1 LANGUAGES C)
 
