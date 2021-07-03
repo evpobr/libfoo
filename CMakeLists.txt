@@ -26,9 +26,6 @@ set_target_properties(foo PROPERTIES
   SOVERSION 0
   C_VISIBILITY_PRESET hidden
   PUBLIC_HEADER "${foo_PUBLIC_HDRS}")
-if(NOT BUILD_SHARED_LIBS)
-  target_compile_definitions(foo PUBLIC FOO_STATIC_DEFINE)
-endif()
 
 install(TARGETS foo
   EXPORT foo-config
