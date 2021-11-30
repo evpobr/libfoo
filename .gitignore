@@ -13,3 +13,5 @@ CMakeSettings.json
 
 .vs/
 .vscode/
+
+.cache/
